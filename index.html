@@ -17,29 +17,18 @@
 
 
 
-    <p><button>Send</button></p>
+    <p><button onclick="send()">Send</button></p>
 
     <p class="result"></p>
 
     <script>
-      let shareData = {
-        title: 'krash',
-        text: 'test',
-        url: 'https://kdrain.fullpwn.net/krash.pdf',
-      }
-
-      const btn = document.querySelector('button');
-      const resultPara = document.querySelector('.result');
-
-      btn.addEventListener('click', () => {
-        navigator.share(shareData)
-          .then(() =>
-            resultPara.textContent = 'shared successfully'
-          )
-          .catch((e) =>
-            resultPara.textContent = 'Error: ' + e
-          )
-      });
+        function send() {
+            navigator.share({
+                 title: 'Your title',
+                 text: 'Your text',
+                 url: 'https://kdrain.fullpwn.net/krash.pdf'
+            })
+        };
     </script>
 </body>
 </html>
