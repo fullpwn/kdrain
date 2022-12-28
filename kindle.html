@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>krash</title>
+</head>
+<body>
+    <h1>krash</h1>
+    <p>Tap the button below to overload the browser app.</p>
+    <p><i>This is meant to be used on Kindle devices.</i></p>
+    <button onClick="yes()">krash</button>
+    <script>
+        function yes() {
+                var total = "";
+        for( var i = 0; i < 100000; i++ ) {
+            total = total + i.toString();
+            history.pushState(0,0, total );
+        }
+        }
+    </script>
+</body>
+</html>

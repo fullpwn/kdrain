@@ -4,20 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>krash</title>
+    <title>Krash</title>
 </head>
 <body>
-    <h1>krash</h1>
-    <p>Tap the button below to overload the browser app.</p>
-    <button onClick="yes()">krash</button>
+    <h1>krash how-to</h1>
+    <p>1. Tap the send button</p>
+    <p>2. Tap the kindle app</p>
+    <p>3. Share it to your kindle</p>
+    <p>4. Wait for it to appear on your device</p>
+    <p>5. Profit</p>
+
+
+
+
+    <p><button>Send</button></p>
+
+    <p class="result"></p>
+
     <script>
-        function yes() {
-                var total = "";
-        for( var i = 0; i < 100000; i++ ) {
-            total = total + i.toString();
-            history.pushState(0,0, total );
-        }
-        }
+      let shareData = {
+        title: 'krash',
+        text: 'test',
+        url: 'https://kdrain.fullpwn.net/krash.pdf',
+      }
+
+      const btn = document.querySelector('button');
+      const resultPara = document.querySelector('.result');
+
+      btn.addEventListener('click', () => {
+        navigator.share(shareData)
+          .then(() =>
+            resultPara.textContent = 'shared successfully'
+          )
+          .catch((e) =>
+            resultPara.textContent = 'Error: ' + e
+          )
+      });
     </script>
 </body>
 </html>
