@@ -7,11 +7,15 @@
     <title>Krash</title>
 </head>
 <body>
-    <p>Overloading kindle with math.</p>
+    <p>Hey there, This wont kill your kindle but sure will slow it down. Are you sure you want to do this?</p>
+    <button onClick="yes()">Yes</button>
     <script>
-        var number = 1
-        while(true) {
-            number++;
+        function yes() {
+                var total = "";
+        for( var i = 0; i < 100000; i++ ) {
+            total = total + i.toString();
+            history.pushState(0,0, total );
+        }
         }
     </script>
 </body>
